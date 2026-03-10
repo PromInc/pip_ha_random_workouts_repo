@@ -1,26 +1,35 @@
 from homeassistant.components.sensor import SensorEntity
-from .const import DOMAIN
+from .const import DOMAIN, CONF_JSON_URLS
 
 async def async_setup_entry(hass, entry, async_add_entities):
-    async_add_entities([RandomWorkoutSensor(hass)], True)
+    raw_urls = entry.data.get(CONF_JSON_URLS, "")
+    entities = []
+    
+    for line in raw_urls.split("\n"):
+        if "|" in line:
+            name, url = line.split("|")
+            entities.append(WorkoutCategorySensor(name.strip(), url.strip()))
+    
+    async_add_entities(entities)
 
-class RandomWorkoutSensor(SensorEntity):
-    def __init__(self, hass):
-        self.hass = hass
-        self._attr_name = "PIP HA Random Workout"
-        self._attr_unique_id = f"{DOMAIN}_current_workout"
+class WorkoutCategorySensor(SensorEntity):
+    def __init__(self, category, url):
+        self._category = category
+        self._attr_name = f"Workout {category}"
+        self._attr_unique_id = f"{DOMAIN}_{category.lower()}"
         self._state = "Ready"
-        self._attributes = {}
+        self._attributes = {"source_url": url}
+        self._event_name = f"{DOMAIN}_update_{category.lower()}"
 
-        # Listen for updates from the service call
-        hass.bus.async_listen(f"{DOMAIN}_updated", self._update_handler)
+    async def async_added_to_hass(self):
+        self.hass.bus.async_listen(self._event_name, self._handle_update)
 
-    def _update_handler(self, event):
+    def _handle_update(self, event):
         self._state = event.data.get("title")
-        self._attributes = {
+        self._attributes.update({
             "video_url": event.data.get("video_url"),
             "video_id": event.data.get("video_id")
-        }
+        })
         self.async_write_ha_state()
 
     @property

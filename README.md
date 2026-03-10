@@ -36,3 +36,11 @@ To automatically play a workout on your TV (e.g., at 7:00 AM), use the following
 service: pip_ha_random_workouts.pick_random
 data:
   entity_id: media_player.living_room_tv
+```
+
+## Changelog
+### 1.0.1
+- Improve how enties are loaded
+
+### 1.0.0
+- Initial release

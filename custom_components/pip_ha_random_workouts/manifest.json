@@ -6,5 +6,5 @@
   "documentation": "https://github.com/prominc/pip_ha_random_workouts",
   "iot_class": "cloud_polling",
   "issue_tracker": "https://github.com/prominc/pip_ha_random_workouts/issues",
-  "version": "1.0.0"
+  "version": "1.0.1"
 }

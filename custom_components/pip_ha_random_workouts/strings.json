@@ -1,0 +1,29 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "PIP HA Random Workouts Setup",
+        "description": "Enter your workout categories and URLs. Format: Name|URL (one per line). Example:\nYoga|https://site.com/yoga.json\nCardio|https://site.com/cardio.json",
+        "data": {
+          "json_urls": "Workout Lists (Name|URL)"
+        }
+      }
+    }
+  },
+  "services": {
+    "pick_random": {
+      "name": "Pick Random Workout",
+      "description": "Selects a random workout for a specific category.",
+      "fields": {
+        "category": {
+          "name": "Category Name",
+          "description": "The name of the category (e.g., Yoga) exactly as entered during setup."
+        },
+        "entity_id": {
+          "name": "Media Player",
+          "description": "Optional: The TV to play the video on."
+        }
+      }
+    }
+  }
+}

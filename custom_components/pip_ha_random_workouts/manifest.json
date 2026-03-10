@@ -1,10 +1,10 @@
 {
   "domain": "pip_ha_random_workouts",
   "name": "PIP HA Random Workouts",
-  "codeowners": ["@prominc"],
+  "codeowners": ["@PromInc"],
   "config_flow": true,
-  "documentation": "https://github.com/prominc/pip_ha_random_workouts",
+  "documentation": "https://github.com/PromInc/pip_ha_random_workouts_repo",
   "iot_class": "cloud_polling",
-  "issue_tracker": "https://github.com/prominc/pip_ha_random_workouts/issues",
+  "issue_tracker": "https://github.com/PromInc/pip_ha_random_workouts_repo/issues",
   "version": "1.0.1"
 }

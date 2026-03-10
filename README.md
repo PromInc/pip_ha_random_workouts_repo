@@ -39,6 +39,10 @@ data:
 ```
 
 ## Changelog
+
+### 1.0.2
+- hacs structure update
+
 ### 1.0.1
 - Improve how enties are loaded
 

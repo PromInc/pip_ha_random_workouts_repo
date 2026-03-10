@@ -2,5 +2,6 @@
   "name": "PIP HA Random Workouts",
   "render_readme": true,
   "category": "integration",
-  "homeassistant": "2024.1.0.1"
+  "homeassistant": "2024.4.0",
+  "iot_class": "cloud_polling"
 }

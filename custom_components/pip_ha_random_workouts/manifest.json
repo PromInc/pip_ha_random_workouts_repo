@@ -6,5 +6,8 @@
   "documentation": "https://github.com/PromInc/pip_ha_random_workouts_repo",
   "iot_class": "cloud_polling",
   "issue_tracker": "https://github.com/PromInc/pip_ha_random_workouts_repo/issues",
-  "version": "1.0.4"
+  "version": "1.0.5",
+  "dependencies": [],
+  "integration_type": "device",
+  "requirements": []
 }

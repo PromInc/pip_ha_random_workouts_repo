@@ -3,5 +3,7 @@
   "render_readme": true,
   "category": "integration",
   "homeassistant": "2024.4.0",
+  "domain": "pip_ha_random_workouts",
+  "country": "US",
   "iot_class": "cloud_polling"
 }

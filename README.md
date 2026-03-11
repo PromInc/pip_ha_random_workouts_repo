@@ -40,6 +40,9 @@ data:
 
 ## Changelog
 
+### 1.0.6
+- code improvements
+
 ### 1.0.5
 - debug
 

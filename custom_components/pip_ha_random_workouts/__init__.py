@@ -20,6 +20,10 @@ async def async_setup_entry(hass: HomeAssistant, entry):
         media_player = call.data.get("entity_id")
 
         raw_urls = entry.data.get(CONF_JSON_URLS, "")
+
+        _LOGGER.error("bprom test: checkpoint 1")
+        _LOGGER.error("raw_urls: %s", raw_urls)
+
         url_map = {}
         for line in raw_urls.split("\n"):
             if "|" in line:

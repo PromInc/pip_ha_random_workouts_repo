@@ -40,6 +40,9 @@ data:
 
 ## Changelog
 
+### 1.0.8
+- debug logging
+
 ### 1.0.7
 - bug fix `__init__.py` format
 

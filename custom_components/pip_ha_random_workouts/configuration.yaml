@@ -1,5 +1,0 @@
-logger:
-  default: warning
-  logs:
-    custom_components.pip_ha_random_workouts: debug
-    homeassistant.loader: debug
